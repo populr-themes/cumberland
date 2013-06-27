@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html itemscope>
+<head>
+  <meta charset="utf-8">
+
+  <!-- Name of your theme -->
+  <title>Cumberland</title>
+  <meta itemprop="palette" content="palette-default" title="Umber" data-preview="#92312a">
+  <meta itemprop="palette" content="palette-seafoam" title="Seafoam" data-preview="#4b8374">
+  <meta itemprop="palette" content="palette-fawn" title="Fawn" data-preview="#674e2d">
+  <meta itemprop="palette" content="palette-custom" title="Custom" data-preview="custom">
+
+  <!-- Add any styles your theme requires here -->
+  <link rel="stylesheet/less" type="text/css" href="/styles/main.less">
+  <meta itemprop="dummyImageCategory" content="Landscapes">
+  <meta itemprop="dummyContentLength" content="short">
+  <meta itemprop="backgroundContainer" content=".columnizer-row:first-child">
+  <meta itemprop="defaultBackground" content="/images/brickwall.png" data-width="110" data-height="69" data-position="nw" data-style="tile" data-color="#eee">
+  <!-- This script loads the Populr theming engine. Populr will automatically remove it at runtime. -->
+  <script src="http://lvh.me:3000/assets/developers/themer.js"></script>
+
+  <!-- Add any javscript your theme requires here -->
+  <script src="/js/main.js"></script>
+
+</head>
+<body>
+  <!-- Put your theme's HTML inside this script tag. The script tag will 
+       prevent issues with quote escaping and invalid markup. -->
+  <script id="theme" type="text/x-handlebars-template">
+    <div id="header">
+      {{{logo width=150}}}
+      {{{title}}}
+    </div>
+    {{#region "columnizer" id="main-region" max_cols="3" max_auto_assets="0" dummy_content="I-1|D-3|D-1,D-1|D-1,D-1,D-1|I-1,I-1,I-1|T-1,T-1|I-1,I-1|I-1,I-1,I-1|T-1"}}
+
+      {{#asset "text" size="1"}}
+        {{{title}}}
+        {{{body}}}
+      {{/asset}}
+
+      {{#asset "text" size="2"}}
+        {{{title}}}
+        {{{body}}}
+      {{/asset}}
+
+      {{#asset "text" size="3"}}
+        {{{title}}}
+        {{{body}}}
+      {{/asset}}
+
+      {{#asset "imagegroup" size="1"}}
+        {{#if_equal layout.sortOrder 0}}
+          <div class="header-image">
+            <div class="text">
+              <div class="text-inner">
+                {{{title}}}
+                {{{description}}}
+              </div>
+            </div>
+            {{{imageslider images width="280" height="378" crop-single=true}}}
+          </div>
+        {{else}}
+          {{{imageslider images width="700" height="378" crop-single=true}}}
+          <div class="text">
+            {{{title}}}
+            {{{description}}}
+          </div>
+        {{/if_equal}}
+      {{/asset}}
+ 
+      {{#asset "imagegroup" size="2"}}
+        {{{imageslider images width="340" height="210" crop-single="true"}}}
+        <div class="text">
+          {{{title}}}
+          {{{description}}}
+        </div>
+      {{/asset}}
+  
+      {{#asset "imagegroup" size="3"}}
+        {{{imageslider images width="220" height="147" crop-single="true"}}}
+        <div class="text">
+          {{{title}}}
+          {{{description}}}
+        </div>
+      {{/asset}}
+  
+      {{#asset "documentgroup" size="1"}}
+        {{{title}}}
+        {{{description}}}
+        <ul class="documents">
+          {{#documents}}
+          <li>
+            <a href="{{original_url}}" title="Download {{title}}">
+              <i class="cumberland-icon cumberland-icon-file"></i>
+              <div class="meta">
+                <p class="title">{{title}}</p>
+                <p class="filesize">{{{format_file_size source_file_size precision=0}}}</p>
+              </div>
+              <div class="download">
+                <span class="btn btn-large"><i class="cumberland-icon cumberland-icon-download"></i><span class="download-text">&nbsp;&nbsp;download</span></span>
+              </div>
+            </a>
+          </li>
+          {{/documents}}
+        </ul>
+      {{/asset}}
+ 
+      {{#asset "documentgroup" size="2"}}
+        {{{title}}}
+        {{{description}}}
+        <ul class="documents">
+          {{#documents}}
+          <li>
+            <a href="{{original_url}}" title="Download {{title}}">
+              <i class="cumberland-icon cumberland-icon-file"></i>
+              <div class="meta">
+                <p class="title">{{title}}</p>
+                <p class="filesize">{{{format_file_size source_file_size precision=0}}}</p>
+              </div>
+              <div class="download">
+                <span class="btn btn-large"><i class="cumberland-icon cumberland-icon-download"></i></span>
+              </div>
+            </a>
+          </li>
+          {{/documents}}
+        </ul>
+      {{/asset}}
+ 
+      {{#asset "documentgroup" size="3"}}
+        {{{title}}}
+        {{{description}}}
+        <ul class="documents">
+          {{#documents}}
+          <li>
+            <a href="{{original_url}}" title="Download {{title}}">
+              <div class="meta">
+                <p class="title">{{title}}</p>
+                <p class="filesize">{{{format_file_size source_file_size precision=0}}}</p>
+              </div>
+              <div class="download">
+                <span class="btn btn-large"><i class="cumberland-icon cumberland-icon-download"></i></span>
+              </div>
+            </a>
+          </li>
+          {{/documents}}
+        </ul>
+      {{/asset}}
+ 
+      {{#asset "embedgroup" size="1" width="700"}}
+        {{#embeds}}
+          <div class="embed">{{{html}}}</div>
+        {{/embeds}}
+        <div class="text">
+          {{{title}}}
+          {{{description}}}
+        </div>
+      {{/asset}}
+
+      {{#asset "embedgroup" size="2" width="340"}}
+        {{#embeds}}
+          <div class="embed">{{{html}}}</div>
+        {{/embeds}}
+        <div class="text">
+          {{{title}}}
+          {{{description}}}
+        </div>
+      {{/asset}}
+
+      {{#asset "embedgroup" size="3" width="220"}}
+        {{#embeds}}
+          <div class="embed">{{{html}}}</div>
+        {{/embeds}}
+        <div class="text">
+          {{{title}}}
+          {{{description}}}
+        </div>
+      {{/asset}}
+
+    {{/region}}
+
+    {{{sharing}}}
+    
+    {{{pop_links}}}
+
+  </script>
+</body>
+</html>

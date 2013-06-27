@@ -1,0 +1,48 @@
+@font-face {
+  font-family: "Cumberland-Icons";
+  src:url("@{base-url}/fonts/Cumberland-Icons/Cumberland-Icons.eot");
+  src:url("@{base-url}/fonts/Cumberland-Icons/Cumberland-Icons.eot?#iefix") format("embedded-opentype"),
+    url("@{base-url}/fonts/Cumberland-Icons/Cumberland-Icons.woff") format("woff"),
+    url("@{base-url}/fonts/Cumberland-Icons/Cumberland-Icons.ttf") format("truetype"),
+    url("@{base-url}/fonts/Cumberland-Icons/Cumberland-Icons.svg#Cumberland-Icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Use the following CSS code if you want to have a class per icon */
+/*
+Instead of a list of all class selectors,
+you can use the generic selector below, but it"s slower:
+[class*="cumberland-icon-"] {
+*/
+.cumberland-icon {
+  font-family: "Cumberland-Icons";
+  speak: none;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+.cumberland-icon-magnify:before {
+  content: "\e000";
+}
+.cumberland-icon-download:before {
+  content: "\e001";
+}
+.cumberland-icon-file:before {
+  content: "\e002";
+}
+
+// /* Use the following CSS code if you want to use data attributes for inserting your icons */
+// [data-icon]:before {
+//   font-family: "Cumberland-Icons";
+//   content: attr(data-icon);
+//   speak: none;
+//   font-weight: normal;
+//   font-variant: normal;
+//   text-transform: none;
+//   line-height: 1;
+//   -webkit-font-smoothing: antialiased;
+// }
