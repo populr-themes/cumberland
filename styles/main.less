@@ -105,6 +105,7 @@ h2, h3 {
 
 a {
   color: @custom-color;
+  text-decoration: underline;
 }
 
 b, strong {
@@ -174,13 +175,18 @@ body {
 .columnizer-row:nth-child(even) {
   background-color: @custom-color;
   .text-color-light-dark();
+  a {
+    .text-color-light-dark();
+  }
 }
 
 /* IE */
 .lt-ie9 {
   .columnizer-row.even {
     background-color: @custom-color;
-    .text-color-light-dark();
+    a {
+      .text-color-light-dark();
+    }
   }
 }
 /* /IE */
