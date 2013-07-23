@@ -73,6 +73,7 @@ body {
   font-weight: normal;
   color: @dark-gray;
   background-color: @white;
+  margin: 0 !important;
 }
 
 p, h1, h2, h3 {
@@ -92,6 +93,9 @@ h2, h3 {
 .asset-title, #pop-title {
   font-family: @headline-font-family;
   font-weight: @headline-font-weight;
+  i, em {
+    font-family: 'OpenSansSemiBoldItalic', 'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif !important;
+  }
 }
 
 .asset-title {
@@ -184,6 +188,7 @@ body {
 .lt-ie9 {
   .columnizer-row.even {
     background-color: @custom-color;
+    .text-color-light-dark();
     a {
       .text-color-light-dark();
     }
@@ -207,7 +212,7 @@ body {
 
 
 .has-logo #header, .has-title #header {
-  padding: @baseline unit(@gutter-width / 2, px);
+  padding: @baseline;
 }
 
 
@@ -262,14 +267,15 @@ body {
     }
   }
 }
+.lt-ie9 #pop-links li { display: block; }
 
 #pop-sharing {
-  margin: @baseline * 2 auto;
+  margin: 30px auto;
 }
 
 .columnizer-row:first-child .asset-type-text {
-  background: @white;
-  .border-radius(@border-radius / 2);
+  // background: @white;
+  // .border-radius(@border-radius / 2);
   padding: @baseline;
   font-size: @large-font-size;
   line-height: @baseline * 1.15;
@@ -407,6 +413,22 @@ body {
     }
   }
 }
+.lt-ie9 {
+  .asset-type-documentgroup .documents li {
+    a { width: auto; }
+    .meta { margin-left: 5px; }
+  }
+  .download-spacing { display: none; }
+  .cumberland-icon-download, .cumberland-icon-file { display: none; }
+  .asset-type-documentgroup.asset-size-3 .documents li a {
+    .meta { width: auto; }
+    .download { display: none; }
+  }
+}
+.download-text-ie {
+  display: none;
+  .lt-ie9 & { display: inline; }
+}
 
 .asset-type-documentgroup.asset-size-1 .documents li .meta {
   width: 456px;
@@ -421,17 +443,25 @@ body {
   width: 120px;
 }
 
+.body, .description {
+  .lt-ie9 & { ul, ol { margin-left: 15px; } }
+  li { margin: 7px 0; }
+}
 
 #populr > #image-slider-themes > .basic(@arrow-color: @white, @bg-color: @custom-color);
 
 @media screen and (max-width: 860px) {
+  #pop {
+    padding-bottom: 0 !important;
+  }
+
   #pop-links {
     position: relative;
     width: auto;
     padding: 0;
     .box-sizing(border-box);
     & .addthis_button_facebook_like {width: auto;}
-    margin: @baseline * 2 auto;
+    margin: 30px auto;
     top: auto !important;
     background: transparent;
     .border-radius(0);
@@ -527,11 +557,14 @@ body {
     margin: auto !important;
   }
 
+  .js .populr-image-slider .slide a.cumberland-icon-magnify:hover { .opacity(0); }
+
   .documents .meta {
     white-space: nowrap;
-    max-width: 60% !important;
+    max-width: 59% !important;
   }
   .download-text { display: none; }
+  .documents li .meta { width: auto !important; }
 
   .js .populr-image-slider .slide a:hover {
     .opacity(0);
