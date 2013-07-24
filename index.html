@@ -68,17 +68,17 @@
 -->
 
       {{#asset "imagegroup" size="1"}}
+        {{{title}}}
         {{{imageslider images width="700" height="378" crop-single=true}}}
         <div class="text">
-          {{{title}}}
           {{{description}}}
         </div>
       {{/asset}}
  
       {{#asset "imagegroup" size="2"}}
+        {{{title}}}
         {{{imageslider images width="340" height="210" crop-single="true"}}}
         <div class="text">
-          {{{title}}}
           {{{description}}}
         </div>
       {{/asset}}
@@ -154,21 +154,21 @@
       {{/asset}}
  
       {{#asset "embedgroup" size="1" width="700"}}
+        {{{title}}}
         {{#embeds}}
           <div class="embed">{{{html}}}</div>
         {{/embeds}}
         <div class="text">
-          {{{title}}}
           {{{description}}}
         </div>
       {{/asset}}
 
       {{#asset "embedgroup" size="2" width="340"}}
+        {{{title}}}
         {{#embeds}}
           <div class="embed">{{{html}}}</div>
         {{/embeds}}
         <div class="text">
-          {{{title}}}
           {{{description}}}
         </div>
       {{/asset}}

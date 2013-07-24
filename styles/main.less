@@ -124,11 +124,13 @@ h2, h3 {
 
 .asset-title {
   margin-bottom: @baseline * 0.5;
-  padding-top: @baseline;
+  padding-top: @baseline * 0.5;
 }
 
-.asset-type-text .asset-title, .asset-type-documentgroup .asset-title {
-  padding-top: 0;
+.asset-type-text, .asset-type-documentgroup, .asset-type-embedgroup.asset-size-1, .asset-type-embedgroup.asset-size-2 {
+  .asset-title {
+    padding-top: 0;
+  }
 }
 
 a {
@@ -279,8 +281,6 @@ body {
 }
 
 .columnizer-row:first-child .asset-type-text {
-  // background: @white;
-  // .border-radius(@border-radius / 2);
   padding: @baseline 0;
   font-size: @large-font-size;
   line-height: @baseline * 1.15;
@@ -289,6 +289,12 @@ body {
 .asset-type-imagegroup img {
   z-index: 1;
   position: relative;
+}
+
+.asset-type-imagegroup, .asset-type-embedgroup {
+  &.asset-size-1, &.asset-size-2 {
+    .description { margin-top: @baseline / 2; }
+  }
 }
 
 .header-image {
