@@ -28,6 +28,10 @@
 @title-font-size: 35px;
 
 /* MIXINS */
+#populr > .link-button();
+#populr > .icon();
+#populr > .inline-logo-title();
+
 .text-shadow() {
   text-shadow: 1px 1px 1px rgba(0,0,0,0.61);
 }
@@ -237,35 +241,11 @@ body {
 
 
 #pop-title {
-  float: left;
-  .has-logo & { float: right; }
-  text-align: left;
   padding: 0;
   margin: 0;
   font-size: @title-font-size;
-  line-height: @baseline * 3;
+  line-height: 1.1;
   text-align: left;
-  width: 100%;
-  .has-logo & {
-    text-align: right;
-    width: 740px - unit(@gutter-width * 4, px) - 150px;
-  }
-}
-
-#pop-logo {
-  float: left;
-  text-align: left;
-  margin: 0;
-}
-
-#pop-logo img {
-  padding: 0;
-  width: auto;
-  min-height: 63px;
-  height: auto !important;
-  height: 63px;
-  max-height: 150px;
-  display: block;
 }
 
 #pop-links {
@@ -505,28 +485,6 @@ body {
   
   #header {
     width: auto;
-  }
-
-  #pop-logo {
-    .box-sizing(border-box);
-    margin: 0 8px;
-    clear: both;
-  }
-
-  #pop-logo img {
-    max-width: 100%;
-    .box-sizing(border-box);
-  }
-
-  #pop-title {
-    clear: both;
-    text-align: left !important;
-    [class*="text-align-"] {
-      text-align: left !important;
-    }
-    .has-logo & {
-      padding-top: @baseline;
-    }
   }
 
   #main-region, #meta {
