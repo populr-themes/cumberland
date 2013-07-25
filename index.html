@@ -26,7 +26,9 @@
        prevent issues with quote escaping and invalid markup. -->
   <script id="theme" type="text/x-handlebars-template">
     <div id="header">
-      {{{inline_logo_title}}}
+      {{logo}}
+      {{{title}}}
+<!--      {{{inline_logo_title}}} -->
     </div>
     {{#region "columnizer" id="main-region" max_cols="3" max_auto_assets="0" dummy_content="I-1|D-3|D-1,D-1|D-1,D-1,D-1|I-1,I-1,I-1|T-1,T-1|I-1,I-1|I-1,I-1,I-1|T-1"}}
 
