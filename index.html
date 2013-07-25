@@ -13,7 +13,7 @@
   <meta itemprop="dummyImageCategory" content="Landscapes">
   <meta itemprop="dummyContentLength" content="short">
   <meta itemprop="backgroundContainer" content=".columnizer-row:first-child">
-  <meta itemprop="defaultBackground" content="/images/brickwall.png" data-width="110" data-height="69" data-position="nw" data-style="tile" data-color="#eee">
+  <meta itemprop="defaultBackground" content="/images/coffee_shop_bg_optim.jpg" data-width="1600" data-height="1067" data-position="nw" data-style="fill" data-color="#eee">
   <!-- This script loads the Populr theming engine. Populr will automatically remove it at runtime. -->
   <script src="http://populr.me/assets/developers/themer.js"></script>
 
@@ -26,8 +26,9 @@
        prevent issues with quote escaping and invalid markup. -->
   <script id="theme" type="text/x-handlebars-template">
     <div id="header">
-      {{{logo width=150}}}
+      {{logo}}
       {{{title}}}
+<!--      {{{inline_logo_title}}} -->
     </div>
     {{#region "columnizer" id="main-region" max_cols="3" max_auto_assets="0" dummy_content="I-1|D-3|D-1,D-1|D-1,D-1,D-1|I-1,I-1,I-1|T-1,T-1|I-1,I-1|I-1,I-1,I-1|T-1"}}
 
@@ -46,6 +47,7 @@
         {{{body}}}
       {{/asset}}
 
+<!--
       {{#asset "imagegroup" size="1"}}
         {{#if_equal layout.sortOrder 0}}
           <div class="header-image">
@@ -55,7 +57,7 @@
                 {{{description}}}
               </div>
             </div>
-            {{{imageslider images width="280" height="378" crop-single=true}}}
+            {{{imageslider images width="280" height="280" crop-single=true}}}
           </div>
         {{else}}
           {{{imageslider images width="700" height="378" crop-single=true}}}
@@ -65,11 +67,20 @@
           </div>
         {{/if_equal}}
       {{/asset}}
+-->
+
+      {{#asset "imagegroup" size="1"}}
+        {{{title}}}
+        {{{imageslider images width="700" height="378" crop-single=true}}}
+        <div class="text">
+          {{{description}}}
+        </div>
+      {{/asset}}
  
       {{#asset "imagegroup" size="2"}}
+        {{{title}}}
         {{{imageslider images width="340" height="210" crop-single="true"}}}
         <div class="text">
-          {{{title}}}
           {{{description}}}
         </div>
       {{/asset}}
@@ -95,7 +106,7 @@
                 <p class="filesize">{{{format_file_size source_file_size precision=0}}}</p>
               </div>
               <div class="download">
-                <span class="btn btn-large"><i class="cumberland-icon cumberland-icon-download"></i><span class="download-text">&nbsp;&nbsp;download</span></span>
+                <span class="btn btn-large"><i class="cumberland-icon cumberland-icon-download"></i><span class="download-text"><span class="download-spacing">&nbsp;&nbsp;</span>download</span></span>
               </div>
             </a>
           </li>
@@ -116,7 +127,7 @@
                 <p class="filesize">{{{format_file_size source_file_size precision=0}}}</p>
               </div>
               <div class="download">
-                <span class="btn btn-large"><i class="cumberland-icon cumberland-icon-download"></i></span>
+                <span class="btn btn-large"><i class="cumberland-icon cumberland-icon-download"></i><span class="download-text download-text-ie"><span class="download-spacing">&nbsp;&nbsp;</span>download</span></span>
               </div>
             </a>
           </li>
@@ -145,21 +156,21 @@
       {{/asset}}
  
       {{#asset "embedgroup" size="1" width="700"}}
+        {{{title}}}
         {{#embeds}}
           <div class="embed">{{{html}}}</div>
         {{/embeds}}
         <div class="text">
-          {{{title}}}
           {{{description}}}
         </div>
       {{/asset}}
 
       {{#asset "embedgroup" size="2" width="340"}}
+        {{{title}}}
         {{#embeds}}
           <div class="embed">{{{html}}}</div>
         {{/embeds}}
         <div class="text">
-          {{{title}}}
           {{{description}}}
         </div>
       {{/asset}}
