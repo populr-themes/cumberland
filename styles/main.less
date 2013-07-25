@@ -111,7 +111,7 @@ h1 {
 
 h2, h3 {
   font-size: @header-font-size;
-  line-height: @baseline * 1.5;
+  line-height: 1.2;
 }
 
 .asset-title, #pop-title {
@@ -570,4 +570,9 @@ body {
       margin-top: @baseline !important;
     }
   }
+}
+
+@media screen and (max-width: 752px) {
+  h1#pop-title { font-size: 32px !important; }
+  .asset-title { font-size: 22px !important; }
 }
