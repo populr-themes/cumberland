@@ -28,7 +28,6 @@
     <div id="header">
       {{logo}}
       {{{title}}}
-<!--      {{{inline_logo_title}}} -->
     </div>
     {{#region "columnizer" id="main-region" max_cols="3" max_auto_assets="0" dummy_content="I-1|D-3|D-1,D-1|D-1,D-1,D-1|I-1,I-1,I-1|T-1,T-1|I-1,I-1|I-1,I-1,I-1|T-1"}}
 
@@ -47,31 +46,9 @@
         {{{body}}}
       {{/asset}}
 
-<!--
-      {{#asset "imagegroup" size="1"}}
-        {{#if_equal layout.sortOrder 0}}
-          <div class="header-image">
-            <div class="text">
-              <div class="text-inner">
-                {{{title}}}
-                {{{description}}}
-              </div>
-            </div>
-            {{{imageslider images width="280" height="280" crop-single=true}}}
-          </div>
-        {{else}}
-          {{{imageslider images width="700" height="378" crop-single=true}}}
-          <div class="text">
-            {{{title}}}
-            {{{description}}}
-          </div>
-        {{/if_equal}}
-      {{/asset}}
--->
-
       {{#asset "imagegroup" size="1"}}
         {{{title}}}
-        {{{imageslider images width="700" height="378" crop-single=true}}}
+        {{{imageslider images width="700" height="378"}}}
         <div class="text">
           {{{description}}}
         </div>
