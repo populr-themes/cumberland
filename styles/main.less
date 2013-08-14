@@ -7,6 +7,11 @@
 @import 'icons';
 @import 'OpenSans';
 
+/* MIXINS */
+#populr > .link-button(@custom-color);
+#populr > .icon(@custom-color);
+#populr > .inline-logo-title();
+
 @columns: 12;
 @column-width: 40;
 @gutter-width: 20;
@@ -26,11 +31,6 @@
 @header-font-size: 24px;
 @large-header-font-size: 27px;
 @title-font-size: 35px;
-
-/* MIXINS */
-#populr > .link-button();
-#populr > .icon();
-#populr > .inline-logo-title();
 
 .text-shadow() {
   text-shadow: 1px 1px 1px rgba(0,0,0,0.61);
@@ -93,7 +93,7 @@
 body {
   font-family: 'OpenSansRegular', 'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;
   font-size: @normal-font-size;
-  line-height: @baseline;
+  line-height: 1.5;
   font-weight: normal;
   color: @dark-gray;
   background-color: @white;
@@ -106,7 +106,7 @@ p, h1, h2, h3 {
 }
 
 h1 {
-  line-height: @baseline * 2;
+  line-height: 1.1;
 }
 
 h2, h3 {
@@ -162,7 +162,7 @@ button, .btn {
   border: 0;
   .border-radius(@border-radius);
   background: @darkest-custom-color;
-  line-height: @baseline;
+  line-height: 1.5;
   cursor: pointer;
   text-decoration: none;
   .transition(~'background 80ms ease-in-out');
@@ -204,6 +204,8 @@ body {
   a {
     .text-color-light-dark();
   }
+  #populr > .link-button(@alt-custom-color);
+  #populr > .icon(@alt-custom-color);
 }
 
 /* IE */
@@ -214,6 +216,8 @@ body {
     a {
       .text-color-light-dark();
     }
+    #populr > .link-button(@alt-custom-color);
+    #populr > .icon(@alt-custom-color);
   }
 }
 /* /IE */
@@ -279,7 +283,6 @@ body {
 
 .white-background-fill {
     padding: @baseline;
-    // line-height: @baseline * 1.15;
     .border-radius(@border-radius);
     background-color: @white;  
 }
@@ -318,7 +321,7 @@ body {
     .border-radius(@border-radius / 2);
     margin-top: @baseline * 4;
     font-size: @large-font-size;
-    line-height: @baseline * 1.15;
+    line-height: 1.67;
   }
   .text-inner {
     padding: @baseline;
@@ -430,7 +433,7 @@ body {
       .cumberland-icon-download {
         vertical-align: middle;
         font-size: 25px;
-        line-height: @baseline;
+        line-height: 0.84;
       }
       .btn:hover {
         background-color: @darker-custom-color;
