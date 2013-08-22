@@ -7,6 +7,11 @@
 @import 'icons';
 @import 'OpenSans';
 
+/* MIXINS */
+#populr > .link-button(@custom-color);
+#populr > .icon(@custom-color);
+#populr > .inline-logo-title();
+
 @columns: 12;
 @column-width: 40;
 @gutter-width: 20;
@@ -26,11 +31,6 @@
 @header-font-size: 24px;
 @large-header-font-size: 27px;
 @title-font-size: 35px;
-
-/* MIXINS */
-// #populr > .link-button();
-// #populr > .icon();
-// #populr > .inline-logo-title();
 
 .text-shadow() {
   text-shadow: 1px 1px 1px rgba(0,0,0,0.61);
@@ -93,7 +93,7 @@
 body {
   font-family: 'OpenSansRegular', 'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;
   font-size: @normal-font-size;
-  line-height: @baseline;
+  line-height: 1.5;
   font-weight: normal;
   color: @dark-gray;
   background-color: @white;
@@ -106,7 +106,7 @@ p, h1, h2, h3 {
 }
 
 h1 {
-  line-height: @baseline * 2;
+  line-height: 1.1;
 }
 
 h2, h3 {
@@ -127,7 +127,7 @@ h2, h3 {
   padding-top: @baseline * 0.5;
 }
 
-.asset-type-text, .asset-type-documentgroup, .asset-type-embedgroup.asset-size-1, .asset-type-embedgroup.asset-size-2 {
+.asset-type-text, .asset-type-documentgroup, .asset-type-imagegroup.asset-size-1, .asset-type-imagegroup.asset-size-2, .asset-type-embedgroup.asset-size-1, .asset-type-embedgroup.asset-size-2 {
   .asset-title {
     padding-top: 0;
   }
@@ -141,10 +141,6 @@ a {
 b, strong {
   .font-bold();
 }
-
-// i, em {
-//   .font-italic();
-// }
 
 b i,
 i b,
@@ -166,7 +162,7 @@ button, .btn {
   border: 0;
   .border-radius(@border-radius);
   background: @darkest-custom-color;
-  line-height: @baseline;
+  line-height: 1.5;
   cursor: pointer;
   text-decoration: none;
   .transition(~'background 80ms ease-in-out');
@@ -208,6 +204,8 @@ body {
   a {
     .text-color-light-dark();
   }
+  #populr > .link-button(@alt-custom-color);
+  #populr > .icon(@alt-custom-color);
 }
 
 /* IE */
@@ -218,6 +216,8 @@ body {
     a {
       .text-color-light-dark();
     }
+    #populr > .link-button(@alt-custom-color);
+    #populr > .icon(@alt-custom-color);
   }
 }
 /* /IE */
@@ -277,19 +277,34 @@ body {
 }
 
 .columnizer-row:first-child {
-  .text-color(@background-color);
-  a { .link-colors(@background-color); }
+  .text-color(#fff);
+  a { .link-colors(#fff); }
 }
 
-.columnizer-row:first-child .asset-type-text {
-  padding: @baseline 0;
-  font-size: @large-font-size;
-  line-height: @baseline * 1.15;
+.white-background-fill {
+    padding: @baseline;
+    .border-radius(@border-radius);
+    background-color: @white;  
+}
+
+.columnizer-row:first-child {
+  .asset-type-text, .asset-type-documentgroup .document-text { .white-background-fill; }
+  .asset-type-imagegroup, .asset-type-embedgroup {
+    &.asset-size-1, &.asset-size-2 {
+      .asset-title, .description { .white-background-fill; }
+    }
+    &.asset-size-3 .text {
+      .white-background-fill;
+      margin-top: 10px;
+      padding-top: @baseline / 2;
+    }
+  }
 }
 
 .asset-type-imagegroup img {
   z-index: 1;
   position: relative;
+  .border-radius(@border-radius);
 }
 
 .asset-type-imagegroup, .asset-type-embedgroup {
@@ -306,7 +321,7 @@ body {
     .border-radius(@border-radius / 2);
     margin-top: @baseline * 4;
     font-size: @large-font-size;
-    line-height: @baseline * 1.15;
+    line-height: 1.67;
   }
   .text-inner {
     padding: @baseline;
@@ -418,7 +433,7 @@ body {
       .cumberland-icon-download {
         vertical-align: middle;
         font-size: 25px;
-        line-height: @baseline;
+        line-height: 0.84;
       }
       .btn:hover {
         background-color: @darker-custom-color;
