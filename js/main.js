@@ -6,16 +6,9 @@ $(document).on('pop-initialized', function(){
     });
   }
 
-  // $('.asset-type-imagegroup').live('initialize', function(){
-  //   $(this).find('.slide').each(function(){
-  //     var $link = $(this).find('a');
-  //     $link.find('img').insertBefore($link);
-  //     $link.addClass('cumberland-icon cumberland-icon-magnify').css({'line-height': $(this).height() + 'px'});
-  //   });
-  // });
-
   $('.asset-type-imagegroup').live('initialize', function(){
-    $(this).find('.slide').each(function(){
+    $(this).find('.slide').not('.magnified').each(function(){
+      $(this).addClass('magnified');  // we don't want to reprocess this, in case the editor fires this more than once without re-rendering the asset
       var $el = $(this).find('a');
       $link = $el.clone();
       $link.find('img').remove();
