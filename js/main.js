@@ -21,7 +21,7 @@ $(document).on('pop-initialized', function(){
       var anyText = $(this).val();
       if($.trim(anyText)===''){
           $(this).css("padding","0");
-          console.log('i am here');
+          alert(anyText);
       }
   });
 });
