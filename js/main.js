@@ -16,4 +16,12 @@ $(document).on('pop-initialized', function(){
       $link.insertAfter($el);
     });
   });
+  
+  $('.columnizer-row:first-child .asset-title,.columnizer-row:first-child .description').each(function(){
+      var anyText = $(this).val();
+      if($.trim(anyText)===''){
+          $(this).css("padding","0");
+          console.log('i am here');
+      }
+  });
 });
