@@ -345,36 +345,36 @@ body {
   }
 }
 
-.js .populr-image-slider .slide a.cumberland-icon-magnify {
+#image-wrapper {
+  position: relative;
+  &:hover {
+    span { display: block; }
+  }
+}
+
+#image-wrapper span {
+  display: none;
   position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: 100;
+  z-index: 1000;
+  left: 50%;
+  margin-left: -23px;
+  top: 50%;
+  margin-top: -23px;
+  pointer-events: none;
+}
+
+.cumberland-icon-magnify {
   text-align: center;
   vertical-align: middle;
   font-size: 55px;
   text-decoration: none;
   color: @white;
-  opacity: 0;
   .transition(~'opacity 80ms ease-in-out');
   text-shadow: 0 0 3px rgba(0,0,0,0.6);
-  text-indent: -9999;
-  &:hover {
-    text-indent: 0;
-    opacity: 100;
-  }
 }
 
 .ie .cumberland-icon-magnify {
-  width: 100%;
-  height: 100%;
   background: transparent url("@{base-url}/images/pixel.gif") repeat top left;
-  text-indent: -9999px;
-  &:hover {
-    text-indent: 0;
-  }
 }
 
 .documents, .documents li {
@@ -570,7 +570,6 @@ body {
     margin: auto !important;
   }
 
-  .js .populr-image-slider .slide a.cumberland-icon-magnify:hover { .opacity(0); }
 
   .documents .meta {
     white-space: nowrap;
@@ -578,10 +577,6 @@ body {
   }
   .download-text { display: none; }
   .documents li .meta { width: auto !important; }
-
-  .js .populr-image-slider .slide a:hover {
-    .opacity(0);
-  }
 
   .header-image {
     .clearfix();

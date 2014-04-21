@@ -48,7 +48,12 @@
 
       {{#asset "imagegroup" size="1"}}
         {{{title}}}
-        {{{imageslider images width="700" height="378"}}}
+        <div id="image-wrapper">
+          {{#if lightbox_enabled}}
+            <span><i class="cumberland-icon cumberland-icon-magnify"/></span>
+          {{/if}}
+          {{{imageslider images width="700" height="378"}}}
+        </div>
         <div class="text">
           {{{description}}}
         </div>
@@ -56,14 +61,24 @@
  
       {{#asset "imagegroup" size="2"}}
         {{{title}}}
-        {{{imageslider images width="340" height="210" crop-single="true"}}}
+        <div id="image-wrapper">
+          {{#if lightbox_enabled}}
+            <span><i class="cumberland-icon cumberland-icon-magnify"/></span>
+          {{/if}}
+          {{{imageslider images width="340" height="210" crop-single="true"}}}
+        </div>
         <div class="text">
           {{{description}}}
         </div>
       {{/asset}}
   
       {{#asset "imagegroup" size="3"}}
-        {{{imageslider images width="220" height="147" crop-single="true"}}}
+        <div id="image-wrapper">
+          {{#if lightbox_enabled}}
+            <span><i class="cumberland-icon cumberland-icon-magnify"/></span>
+          {{/if}}
+          {{{imageslider images width="220" height="147"  crop-single="true"}}}
+        </div>
         {{#if_or title_visible description_visible}}
           <div class="text">
             {{{title}}}
